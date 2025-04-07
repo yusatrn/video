@@ -95,6 +95,5 @@ io.on('connection', (socket) => {
 
 server.listen(PORT, () => {
     // Çalışma mesajını da güncelleyelim
-    console.log(`Güvenli (HTTPS) sinyalleşme sunucusu ${PORT} portunda çalışıyor...`);
-    console.log(`Erişim için: https://localhost:${PORT} veya https://<yerel_ip_adresiniz>:${PORT}`);
+    console.log(`Sunucu ${PORT} portunda çalışıyor...`);
 });
