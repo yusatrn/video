@@ -1,7 +1,7 @@
 const express = require('express');
 // const http = require('http'); // Artık http yerine https kullanacağız
-const https = require('https'); // HTTPS modülünü dahil et
-const fs = require('fs');       // Dosya sistemini (sertifikaları okumak için) dahil et
+const https = require('http'); // HTTPS modülünü dahil et
+//const fs = require('fs');       // Dosya sistemini (sertifikaları okumak için) dahil et
 const socketIo = require('socket.io');
 const path = require('path');
 
@@ -10,14 +10,14 @@ const app = express();
 // --- HTTPS Seçenekleri ---
 // mkcert ile oluşturduğunuz sertifika ve anahtar dosyalarının yollarını belirtin
 // Bu dosyaların server.js ile aynı klasörde olduğunu varsayıyoruz
-const options = {
+/*const options = {
   key: fs.readFileSync('key.pem'),   // Özel anahtar dosyanız
   cert: fs.readFileSync('cert.pem')  // Sertifika dosyanız
-};
+};*/
 // --- ---
 
 // HTTPS sunucusunu oluşturun (Express app ve HTTPS seçenekleri ile)
-const server = https.createServer(options, app);
+const server = http.createServer(app);
 // Socket.IO'yu HTTPS sunucusuna bağlayın
 const io = socketIo(server);
 
