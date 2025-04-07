@@ -1,6 +1,6 @@
 const express = require('express');
 // const http = require('http'); // Artık http yerine https kullanacağız
-const https = require('http'); // HTTPS modülünü dahil et
+const http = require('http'); // HTTPS modülünü dahil et
 //const fs = require('fs');       // Dosya sistemini (sertifikaları okumak için) dahil et
 const socketIo = require('socket.io');
 const path = require('path');
