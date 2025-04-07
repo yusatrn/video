@@ -14,14 +14,13 @@ let peerConnections = {};
 // STUN sunucu yapılandırması (Google'ın public sunucuları)
 const peerConnectionConfig = {
     iceServers: [
+        // Sadece Google'ın ücretsiz STUN sunucuları kalsın
         { urls: 'stun:stun.l.google.com:19302' },
         { urls: 'stun:stun1.l.google.com:19302' },
-        // Production için kendi STUN/TURN sunucunuzu ekleyin
-        // {
-        //   urls: 'turn:YOUR_TURN_SERVER_ADDRESS',
-        //   username: 'YOUR_USERNAME',
-        //   credential: 'YOUR_PASSWORD'
-        // }
+        { urls: 'stun:stun2.l.google.com:19302' },
+        { urls: 'stun:stun3.l.google.com:19302' },
+        { urls: 'stun:stun4.l.google.com:19302' }
+        // TURN sunucusu girdilerini buraya EKLEMİYORUZ (bedava yöntem)
     ]
 };
 
